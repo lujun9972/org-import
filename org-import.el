@@ -7,6 +7,9 @@
       major-mode)))
 
 (defun org-import-file (file &optional buf)
+  "导入FILE的内容到org文件内成为code block
+
+BUF指定插入到哪个org buffer中,默认为当前buffer"
   (interactive "f")
   (let* ((buf (or buf (current-buffer)))
          (mode (org-import--guess-mode-by-filename file))
